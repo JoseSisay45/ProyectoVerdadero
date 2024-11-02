@@ -32,12 +32,12 @@ public class ImagenVentana extends javax.swing.JFrame {
         Ruta = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        Anterior = new javax.swing.JButton();
-        Siguiente = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         Eliminar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        Siguiente = new javax.swing.JButton();
+        Anterior = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -79,26 +79,6 @@ public class ImagenVentana extends javax.swing.JFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(20, 70, 370, 230);
 
-        Anterior.setBackground(new java.awt.Color(51, 255, 0));
-        Anterior.setText("Anterior");
-        Anterior.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AnteriorActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Anterior);
-        Anterior.setBounds(30, 310, 73, 23);
-
-        Siguiente.setBackground(new java.awt.Color(102, 0, 255));
-        Siguiente.setText("Siguiente");
-        Siguiente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SiguienteActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Siguiente);
-        Siguiente.setBounds(220, 310, 90, 20);
-
         jList1.setBackground(new java.awt.Color(255, 114, 135));
         jScrollPane1.setViewportView(jList1);
 
@@ -118,15 +98,41 @@ public class ImagenVentana extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(204, 0, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createCompoundBorder());
 
+        Siguiente.setBackground(new java.awt.Color(102, 0, 255));
+        Siguiente.setText("Siguiente");
+        Siguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SiguienteActionPerformed(evt);
+            }
+        });
+
+        Anterior.setBackground(new java.awt.Color(51, 255, 0));
+        Anterior.setText("Anterior");
+        Anterior.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AnteriorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 570, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(Anterior)
+                .addGap(83, 83, 83)
+                .addComponent(Siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(294, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 380, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(327, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Anterior))
+                .addGap(30, 30, 30))
         );
 
         getContentPane().add(jPanel2);
